@@ -29,5 +29,8 @@ describe('String Calculator', () => {
   test('ignores extra whitespaces between delimiters', () => {
     expect(add("1, 2\n 3 ;4")).toBe(10); // test case - For two num string with mixed delimeters seperated.
   });
-  
+
+   test('throws error on invalid characters', () => {
+    expect(() => add("1,a")).toThrow("Invalid number: a");
+  });
 });
